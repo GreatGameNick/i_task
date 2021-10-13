@@ -9,3 +9,31 @@ $generalFontSize_number: 16;
   line-height: 112.69%;
   color: $greyMiddle;
 }
+
+%font__6-normal-white {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 6px;
+  line-height: 112%;
+  color: darkblue;
+  //color: $white;
+}
+
+%font__10-bold-litegreen {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 112.69%;
+  color: $liteGreen;
+}
+
+%font__11-normal-greydark {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 123.69%;
+  color: $greyDark;
+}

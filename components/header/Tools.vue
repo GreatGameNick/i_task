@@ -8,9 +8,8 @@
       {{ btn.title }}
     </NuxtLink>
     <div class="tools-btn__cart">
-
+      <div class="tools-btn__heart" :data-amount="GET_CART_AMOUNT"></div>
     </div>
-
   </div>
 </template>
 
@@ -21,7 +20,8 @@ export default {
   name: "Tools",
   computed: {
     ...mapGetters({
-      GET_TOOLS_BUTTONS: 'header/GET_TOOLS_BUTTONS'
+      GET_TOOLS_BUTTONS: 'header/GET_TOOLS_BUTTONS',
+      GET_CART_AMOUNT: 'cart/GET_CART_AMOUNT'
     })
   }
 }
@@ -31,6 +31,7 @@ export default {
 .tools-wrapper {
   width: fit-content;
   background: transparent;
+  padding-right: rem(7);
 
   display: flex;
   flex-flow: row nowrap;
@@ -47,6 +48,40 @@ export default {
 
     &:hover {
       color: $greyLite;
+    }
+  }
+
+  .tools-btn__cart {
+    width: rem(40);
+    height: 100%;
+    @extend %flex-center;
+    cursor: pointer;
+
+    .tools-btn__heart {
+      position: relative;
+      width: rem(16);
+      height: rem(16);
+      background: url("static/imgs/header/heart.png") no-repeat center;
+      background-size: contain;
+
+      &:before {
+        position: absolute;
+        content: attr(data-amount);
+        top: rem(-4);
+        right: rem(-4);
+        width: rem(10);
+        height: rem(10);
+        border-radius: 50%;
+        background: $yellow;
+
+        @extend %flex-center;
+        @extend %font__6-normal-white;
+      }
+
+      &:hover {
+        filter: opacity(0.7);
+      }
+
     }
 
   }
