@@ -1,6 +1,8 @@
 <template>
-  <div class="wrapper">
-    ПРИВЕТ!
+  <div class="home-wrapper">
+    <HomeIntroduction/>
+    <HomeDetails/>
+    <HomeTechnicalInfo/>
   </div>
 </template>
 
@@ -8,8 +10,9 @@
 export default {}
 </script>
 
-<style lang="scss">
-.wrapper {
-  color: $red;
+<style scoped lang="scss">
+.home-wrapper {
+  width: 100%;
+
 }
 </style>
