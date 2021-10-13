@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: "defoult"
+  name: "default"
 }
 </script>
 
@@ -17,16 +17,17 @@ export default {
 .total-wrapper {
   position: relative;
   width: 100%;
-  max-width: rem(1923);
+  max-width: $fullWidth;
   margin: 0 auto;
 
-
-  height: 2000px;
-  border: $grey 1px solid;
+  height: 2000px;           //на удаление
+  border: $grey 1px solid;  //на удаление
 
   .header {
-    position: absolute;
-
+    position: relative;
+    width: 100%;
+    max-width: $generalWidth;
+    margin: 0 auto;
   }
 
   .beside-menu {

@@ -1,6 +1,6 @@
 <template>
   <div class="beside-menu-wrapper">
-    beside-menu-wrapper
+
   </div>
 </template>
 
@@ -14,8 +14,8 @@ export default {
 .beside-menu-wrapper {
   width: 100%;
   height: 100%;
+  border-radius: 7px;
   background: $liteGreen;
 
-  border: black 1px solid;
 }
 </style>

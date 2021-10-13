@@ -1,5 +1,7 @@
 <template>
   <div class="header-wrapper">
+    <HeaderTools class="header-tools"/>
+
 
   </div>
 </template>
@@ -12,11 +14,14 @@ export default {
 
 <style scoped lang="scss">
 .header-wrapper {
-  width: 100%;
-  background: $white;
+  height: rem(186);
+  border: yellowgreen 1px solid;     //на удаление
 
-
-  height: 136px;
-  border: yellowgreen 1px solid;
+  .header-tools {
+    position: relative;
+    height: rem(50);
+    margin-left: auto;
+    border: green 1px solid;
+  }
 }
 </style>
