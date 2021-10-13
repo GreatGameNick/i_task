@@ -26,8 +26,6 @@ export default {
   .header {
     position: relative;
     width: 100%;
-    max-width: $generalWidth;
-    margin: 0 auto;
   }
 
   .beside-menu {

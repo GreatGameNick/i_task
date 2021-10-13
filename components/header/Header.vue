@@ -1,7 +1,11 @@
 <template>
   <div class="header-wrapper">
-    <HeaderTools class="header-tools"/>
-    <HeaderMenu class="header-menu"/>
+    <div class="header-tools">
+      <HeaderTools/>
+    </div>
+    <div class="header-menu-wrapper">
+      <HeaderMenu class="header-menu"/>
+    </div>
   </div>
 </template>
 
@@ -17,12 +21,23 @@ export default {
 
   .header-tools {
     position: relative;
+    width: $generalWidth;
     height: rem(50);
-    margin-left: auto;
+    margin: 0 auto;
+
+    & :first-child {
+      margin-left: auto;
+    }
   }
 
-  .header-menu {
+  .header-menu-wrapper {
+    width: 100%;
     height: rem(136);
+    background: $white;
+
+    .header-menu {
+      margin: 0 auto;
+    }
   }
 }
 </style>

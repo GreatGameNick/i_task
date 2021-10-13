@@ -37,3 +37,12 @@ $generalFontSize_number: 16;
   line-height: 123.69%;
   color: $greyDark;
 }
+
+%font__12-normal-greydark {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 112.69%;
+  color: $greyDark;
+}

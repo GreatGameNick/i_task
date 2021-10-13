@@ -30,6 +30,7 @@ export default {
 <style scoped lang="scss">
 .tools-wrapper {
   width: fit-content;
+  height: 100%;
   background: transparent;
   padding-right: rem(7);
 
@@ -61,8 +62,10 @@ export default {
       position: relative;
       width: rem(16);
       height: rem(16);
+      margin: 0 auto;
       background: url("static/imgs/header/heart.png") no-repeat center;
       background-size: contain;
+
 
       &:before {
         position: absolute;
