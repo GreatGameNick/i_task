@@ -4,6 +4,7 @@
       Основные элементы кухонь.
       <br>Их особенности и цена
     </div>
+
     <div class="techno-book">
       <div class="techno-book__menu">
         <div v-for="(item, ind) of GET_TECHNO_MENU"
@@ -53,9 +54,14 @@ export default {
 <style scoped lang="scss">
 .techno-wrapper {
   width: 100%;
-  height: rem(900);
+  height: fit-content;
   background: url("static/imgs/home/table.png") bottom left no-repeat, url("static/imgs/home/lamp.png") top right no-repeat;
   background-size: 30% auto, auto 60%;
+  margin-bottom: 200px;
+
+  @media (max-width: $point_2) {
+    background: $white
+  }
 
   .techno-title {
     width: 62%;
@@ -70,8 +76,14 @@ export default {
     margin: rem(65) 0 0 24%;
     display: flex;
 
+    @media (max-width: $point_2) {
+      width: 98%;
+      margin: rem(50) 1% rem(150);
+    }
+
     &__menu {
       width: 26%;
+      min-width: rem(150);
       height: fit-content;
       min-height: rem(530);
       flex-shrink: 0;
@@ -97,23 +109,26 @@ export default {
       border: 0.5px solid #717275;
       box-sizing: border-box;
       border-radius: 0px 4px 4px 0px;
+      background: $white;
 
       .techno-book__title {
         width: 100%;
-        height: rem(44);
+        height: fit-content;
         display: flex;
 
         & :first-child {
           flex-grow: 1;
-          height: 100%;
+          height: fit-content;
+          min-height: rem(40);
           background: linear-gradient(180deg, #F5D89F 0%, #DDB15C 100%);
           opacity: 0.9;
           @extend %flex-center;
+          box-sizing: border-box;
+          padding-left: rem(10);
         }
 
         & :last-child {
           width: 1.5rem;
-          height: 100%;
           background: $greyDark;
           opacity: 0.9;
           @extend %flex-center;
