@@ -2,9 +2,8 @@
   <div class="introduction-wrapper">
     <div class="introduction-place">
       <div class="introduction-principal">
-        ПРИВЕТ
+        <HomePrincipal/>
       </div>
-<!--      <HomePrincipal/>-->
       <div class="introduction-content">
         Как смещается и редуцируется контент при изменении скрина - дело вкуса.
         <br>А технически - реализуемо практически все, что угодно.
@@ -35,14 +34,21 @@ export default {
     display: grid;
     grid-template: repeat(5, 20%) / repeat(20, 5%);
 
-    border: green 1px solid;
-
     .introduction-principal {
       grid-area: 1 / 12 / span 5 / span 6;
       width: 100%;
       height: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
 
-      border: #f50d0d 1px solid;
+      @media (max-width: $desktopWidth) {
+        grid-area: 1 / 8 / span 5 / span 10;
+      }
+
+      @media (max-width: $mobileWidth) {
+        grid-area: 1 / 4 / span 5 / span 16;
+      }
     }
 
     .introduction-content {
@@ -51,11 +57,10 @@ export default {
       align-items: center;
       justify-content: flex-start;
 
-      border: #10fdb6 1px solid;
-
       @media (max-width: $desktopWidth) {
+        align-items: flex-start;
         box-sizing: border-box;
-        padding: 0 rem(32);
+        padding: rem(32);
       }
     }
   }

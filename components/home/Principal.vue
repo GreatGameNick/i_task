@@ -1,4 +1,4 @@
-<template functional>
+<template>
   <div class="principal-wrapper">
 
   </div>
@@ -12,7 +12,7 @@ export default {
 
 <style scoped lang="scss">
 .principal-wrapper {
-  width: 100%;
+  width: 90%;
   background: url("static/imgs/home/principal.png") no-repeat;
   background-size: contain;
 
