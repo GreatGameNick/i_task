@@ -16,5 +16,8 @@ export default {
 .home-wrapper {
   width: 100%;
 
+  & *:not(:first-child) {
+    margin-top: rem(104);
+  }
 }
 </style>

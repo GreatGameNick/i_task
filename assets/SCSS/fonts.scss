@@ -46,3 +46,33 @@ $generalFontSize_number: 16;
   line-height: 112.69%;
   color: $greyDark;
 }
+
+%font__16-bold-grey {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 28px;
+
+  letter-spacing: 0.02em;
+  color: #F3F3F3;
+}
+
+%font__52 {
+  font-family: TT Norms;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 52px;
+  line-height: 110%;
+  letter-spacing: 0.02em;
+  color: #575B5E;
+}
+
+%font__16-600-lite {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 25px;
+  color: #F3F3F3;
+}

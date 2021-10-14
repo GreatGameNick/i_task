@@ -20,6 +20,7 @@ export default {
 
 <style scoped lang="scss">
 .introduction-wrapper {
+  position: relative;
   width: 100%;
   height: rem(970);
   background: url("../../static/imgs/home/layoutBackground.png") no-repeat;
