@@ -33,7 +33,6 @@ export default {
 .details-wrapper {
   width: 100%;
   max-width: $generalWidth;
-  height: rem(850);
   margin: 0 auto;
 
   display: grid;
@@ -43,10 +42,11 @@ export default {
   grid-auto-flow: column dense;
 
   @media (max-width: $iPhoneWidth) {
-    height: rem(3400);
-    grid-template-columns: 100%;
-    grid-auto-rows: rem(20);
-    grid-auto-flow: row dense;
+    height: fit-content;
+    grid-template-columns: 1fr;
+    grid-auto-rows: $rowHeight;
+    grid-auto-flow: row;
+    row-gap: rem(10);
   }
 
   .details__title {
@@ -57,6 +57,7 @@ export default {
     justify-content: flex-start;
 
     @media (max-width: $iPhoneWidth) {
+      height: $rowHeight;
       grid-area: 1/1/1/1;
       align-items: center;
       justify-content: center;
@@ -67,6 +68,7 @@ export default {
 
 .span-down {
   @media (max-width: $iPhoneWidth) {
+    height: $rowHeight;
     grid-row: span 1 !important;
     grid-column: span 1 !important;
   }
