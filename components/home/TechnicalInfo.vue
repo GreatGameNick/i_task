@@ -6,11 +6,23 @@
     </div>
     <div class="techno-book">
       <div class="techno-book__menu">
-        <div v-for="(item, ind) of GET_TECHNO_MENU" :key="ind">
+        <div v-for="(item, ind) of GET_TECHNO_MENU"
+             :key="ind"
+             @click="chooseItem(item.title)"
+        >
           {{ item.title }}
         </div>
       </div>
+
       <div class="techno-book__specification">
+        <div class="techno-book__title">
+          <div>{{GET_TECHNO_SPECIFICATION(chooseSpecification).title}}</div>
+          <div> X </div>
+        </div>
+
+        <div class="techno-book__description">
+          {{GET_TECHNO_SPECIFICATION(chooseSpecification).description}}
+        </div>
       </div>
     </div>
   </div>
@@ -21,10 +33,19 @@ import {mapGetters} from "vuex";
 
 export default {
   name: "TechnicalInfo",
+  data: () => ({
+    chooseSpecification: 'Фурнитура подъемных дверей'
+  }),
   computed: {
     ...mapGetters({
-      GET_TECHNO_MENU: 'pageStuff/GET_TECHNO_MENU'
+      GET_TECHNO_MENU: 'pageStuff/GET_TECHNO_MENU',
+      GET_TECHNO_SPECIFICATION: 'pageStuff/GET_TECHNO_SPECIFICATION',
     })
+  },
+  methods: {
+    chooseItem(title) {
+      this.chooseSpecification = title
+    }
   }
 }
 </script>
@@ -47,12 +68,13 @@ export default {
     height: fit-content;
     min-height: rem(530);
     margin: rem(65) 0 0 24%;
-    border: blue 1px solid;
+    display: flex;
 
     &__menu {
       width: 26%;
       height: fit-content;
       min-height: rem(530);
+      flex-shrink: 0;
       box-sizing: border-box;
       padding: rem(38) rem(28);
       background: url("static/imgs/home/greyFone.png");
@@ -63,6 +85,49 @@ export default {
       & > :not(:first-child) {
         margin-top: rem(30);
       }
+
+      & > :hover {
+        cursor: pointer;
+        opacity: 0.7;
+      }
+    }
+
+    &__specification {
+      flex-grow: 1;
+      border: 0.5px solid #717275;
+      box-sizing: border-box;
+      border-radius: 0px 4px 4px 0px;
+
+      .techno-book__title {
+        width: 100%;
+        height: rem(44);
+        display: flex;
+
+        & :first-child {
+          flex-grow: 1;
+          height: 100%;
+          background: linear-gradient(180deg, #F5D89F 0%, #DDB15C 100%);
+          opacity: 0.9;
+          @extend %flex-center;
+        }
+
+        & :last-child {
+          width: 1.5rem;
+          height: 100%;
+          background: $greyDark;
+          opacity: 0.9;
+          @extend %flex-center;
+          color: $white;
+          cursor: pointer;
+        }
+      }
+
+      .techno-book__description {
+        width: 100%;
+        box-sizing: border-box;
+        padding: rem(34);
+      }
+
     }
   }
 }
