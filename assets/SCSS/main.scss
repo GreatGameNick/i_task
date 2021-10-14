@@ -33,3 +33,9 @@
     display: none;
   }
 }
+
+.general-wrapper {
+  width: 100%;
+  max-width: $generalWidth;
+  margin: 0 auto;
+}
