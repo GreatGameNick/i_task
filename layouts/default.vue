@@ -20,9 +20,6 @@ export default {
   max-width: $fullWidth;
   margin: 0 auto;
 
-  height: 2000px;           //на удаление
-  border: $grey 1px solid;  //на удаление
-
   .header {
     position: relative;
     width: 100%;
@@ -35,7 +32,7 @@ export default {
     top: 16vw;
     right: 3.3%;
 
-    @media (max-width: 1000px) {
+    @media (max-width: $desktopWidth) {
       position: fixed;
       width: rem(440);
       height: rem(64);
@@ -43,7 +40,7 @@ export default {
       bottom: 20px;
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: $mobileWidth) {
       width: rem(64);
       right: rem(16);
     }

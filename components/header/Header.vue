@@ -3,8 +3,8 @@
     <div class="header-tools">
       <HeaderTools/>
     </div>
-    <div class="header-menu-wrapper">
-      <HeaderMenu class="header-menu"/>
+    <div class="header-menu">
+      <HeaderMenu/>
     </div>
   </div>
 </template>
@@ -21,22 +21,26 @@ export default {
 
   .header-tools {
     position: relative;
-    width: $generalWidth;
+    width: 100%;
+    max-width: $generalWidth;
     height: rem(50);
     margin: 0 auto;
 
-    & :first-child {
+    & > :first-child {
       margin-left: auto;
     }
   }
 
-  .header-menu-wrapper {
+  .header-menu {
     width: 100%;
     height: rem(136);
     background: $white;
 
-    .header-menu {
-      margin: 0 auto;
+    & > :first-child {
+      width: 100%;
+      height: 100%;
+      max-width: $generalWidth;
+      margin: auto;
     }
   }
 }

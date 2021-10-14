@@ -9,41 +9,29 @@
       </div>
     </div>
 
-    <div class="menu-slogan">
+    <div class="menu-slogan no-mobile-screen">
       <span>12 лет</span> производим кухни на заказ в <span>Томске</span> и области
     </div>
 
     <NuxtLink v-for="(btn, ind) of GET_MENU_BUTTONS"
               :key="ind"
               :to="btn.path"
-              class="menu-btn"
+              class="menu-btn desktop-screen"
     >
       <div :style="{background: `url(${imgUrl(btn.img)})`}"></div>
       <div>{{ btn.title }}</div>
     </NuxtLink>
 
-    <address class="menu-online">
+    <address v-for="num in 4" :key="num"  class="menu-online desktop-screen">
       <div class="menu-online__img"></div>
       <div class="menu-online__slogan">Пишите, мы Online</div>
       <div class="menu-online__icon1"></div>
       <div class="menu-online__icon2"></div>
     </address>
 
-    <address class="menu-online">
-      <div class="menu-online__img"></div>
-      <div class="menu-online__slogan">повторяться не стал</div>
-      <div class="menu-online__icon1"></div>
-      <div class="menu-online__icon2"></div>
-    </address>
-
-    <address class="menu-online">
-      <div class="menu-online__img"></div>
-      <div class="menu-online__slogan">The same task</div>
-      <div class="menu-online__icon1"></div>
-      <div class="menu-online__icon2"></div>
-    </address>
-
-
+    <menu class="mobile-menu">
+      MENU
+    </menu>
   </div>
 </template>
 
@@ -70,8 +58,18 @@ export default {
 .menu-wrapper {
   @extend %flex-center;
 
+
   .menu-logo {
     width: rem(112);
+    cursor: pointer;
+
+    &:hover {
+      filter: opacity(0.7);
+    }
+
+    @media (max-width: $desktopWidth) {
+      margin-left: rem(20);
+    }
 
     &__img {
       width: rem(112);
@@ -176,6 +174,10 @@ export default {
       background: url("static/imgs/header/phone1.png") no-repeat center;
       background-size: contain;
       cursor: pointer;
+
+      &:hover {
+        filter: opacity(0.7);
+      }
     }
 
     &__icon2 {
@@ -186,6 +188,33 @@ export default {
       background: url("static/imgs/header/whatsap.png") no-repeat center;
       background-size: contain;
       cursor: pointer;
+
+      &:hover {
+        filter: opacity(0.7);
+      }
+    }
+  }
+
+  .mobile-menu {
+    width: rem(92);
+    height: rem(98);
+    margin: 0 rem(20) 0 auto;
+    border: 1px solid #F3CD82;
+    box-sizing: border-box;
+    border-radius: 18px;
+    cursor: pointer;
+
+    @extend %flex-center;
+    @extend %ipad-screen;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .desktop-screen {
+    @media (max-width: $desktopWidth) {
+      display: none;
     }
   }
 }

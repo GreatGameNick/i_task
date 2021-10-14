@@ -10,3 +10,26 @@
   justify-content: center;
 }
 
+@mixin bb ($color) {
+  box-sizing: border-box;
+  border: #{$color} 1px solid;
+}
+
+
+%desktop-screen {
+  @media (max-width: $desktopWidth) {
+    display: none;
+  }
+}
+
+%ipad-screen {
+  @media (min-width: $desktopWidth) {
+    display: none;
+  }
+}
+
+.no-mobile-screen {
+  @media (max-width: $mobileWidth) {
+    display: none;
+  }
+}

@@ -3,7 +3,7 @@
     <NuxtLink v-for="(btn, ind) in GET_TOOLS_BUTTONS"
               :key="ind"
               :to="btn.path"
-              class="tools-btn__any"
+              class="tools-btn__any no-mobile-screen"
     >
       {{ btn.title }}
     </NuxtLink>
@@ -84,9 +84,13 @@ export default {
       &:hover {
         filter: opacity(0.7);
       }
-
     }
+  }
 
+  .no-mobile-screen {           // а в экспортируемом виде - не срабатывает....    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    @media (max-width: $mobileWidth) {
+      display: none;
+    }
   }
 }
 </style>
