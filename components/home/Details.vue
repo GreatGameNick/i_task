@@ -11,6 +11,7 @@
                       gridRow: 'span ' + detail.rowSpan,
                       gridColumn: 'span ' + detail.columnSpan
                     }"
+                    class="span-down"
     />
   </div>
 </template>
@@ -41,14 +42,34 @@ export default {
   gap: 1%;
   grid-auto-flow: column dense;
 
+  @media (max-width: $iPhoneWidth) {
+    height: rem(3400);
+    grid-template-columns: 100%;
+    grid-auto-rows: rem(20);
+    grid-auto-flow: row dense;
+  }
+
   .details__title {
     grid-area: 1/1/span 2/span 2;
     @extend %font__52;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-  }
 
+    @media (max-width: $iPhoneWidth) {
+      grid-area: 1/1/1/1;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+}
+
+.span-down {
+  @media (max-width: $iPhoneWidth) {
+    grid-row: span 1 !important;
+    grid-column: span 1 !important;
+  }
 }
 
 </style>
